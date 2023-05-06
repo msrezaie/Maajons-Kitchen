@@ -7,6 +7,18 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* my styling */
+#four h2.major {
+    text-align: center;
+}
+
+.features article h3.major .price {
+    float: right;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: lowercase;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3119,12 +3131,10 @@ input, select, textarea {
 			#header nav a {
 				border: 0;
 				display: inline-block;
-				padding: 0 1em;
 			}
 
 				#header nav a:before {
 					float: right;
-					margin-left: 0.75em;
 				}
 
 				#header nav a[href="#menu"] {
@@ -3378,12 +3388,12 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 10em 0 4.75em 0 ;
+		padding: 2em 0 0 0;
 	}
 
 		#banner .inner {
 			margin: 0 auto;
-			width: 55em;
+			width: 50em;
 		}
 
 		#banner .logo {
@@ -3396,20 +3406,8 @@ input, select, textarea {
 			-ms-transform: translateY(0);
 			transform: translateY(0);
 			opacity: 1;
-			margin: 0 0 1.3em 0;
+			margin: 0 0 0.3em 0;
 		}
-
-			#banner .logo .icon {
-				border-radius: 100%;
-				border: solid 2px rgba(255, 255, 255, 0.125);
-				cursor: default;
-				display: inline-block;
-				font-size: 2em;
-				height: 2.25em;
-				line-height: 2.25em;
-				text-align: center;
-				width: 2.25em;
-			}
 
 		#banner h2 {
 			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -3431,8 +3429,7 @@ input, select, textarea {
 			opacity: 1;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			font-size: 2.25em;
-			margin-bottom: 0.8em;
-			padding-bottom: 0.4em;
+			margin-bottom: 0.5em;
 		}
 
 		#banner p {
@@ -3464,7 +3461,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#banner {
-				padding: 7em 0 8.25em 0 ;
+				padding: 2em 0 2.25em 0 ;
 				background-color: #2e3141;
 				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
 				background-size: auto,
@@ -3479,7 +3476,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#banner {
-				padding: 12em 3em 12.375em 3em ;
+				padding: 5em 3em 5.375em 3em ;
 				margin-bottom: -4.75em;
 			}
 
