@@ -1,39 +1,6 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Maajon's Kitchen</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<%- include('includes/head.ejs') %>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="#">Maajon's Kitchen</a></h1>
-						<nav>
-							<a href="#menu"></a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<ul class="links">
-								<li><a href="/about-us">About Us</a></li>
-							</ul>
-							<a href="#" class="close"></a>
-						</div>
-					</nav>
+<%- include('includes/menu.ejs') %>
 
 				<!-- Banner -->
 					<section id="banner">
@@ -57,7 +24,7 @@
 											<div class="image"><img src="images/mantu.png" alt="" /></div>
 											<h3 class="major">Munto<span class="price">$10/lb</span></h3>
 											<p>Steamed dumplings filled with spiced ground beef and onions, topped with garlic yogurt, mint, tomato, and pea sauce</p>
-											<a href="about-dish.html" class="special">About Dish</a>
+											<a href="/about-dish" class="special">About Dish</a>
 										</article>
 										<article>
 											<div class="image"><img src="images/ashak.png" alt="" /></div>
@@ -136,14 +103,5 @@
 					</section>
 
 			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+		
+<%- include('includes/end.ejs') %>
