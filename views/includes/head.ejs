@@ -9,8 +9,8 @@
 		<title>Maajon's Kitchen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -18,7 +18,7 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header" class="<%= path === '/' ? 'alt' : '' %>">
+					<header id="header" class="<%= path === '/' || path === '' ? 'alt' : '' %>">
 						<h1><a href="/">Maajon's Kitchen</a></h1>
 						<nav>
 							<a href="#menu"></a>
