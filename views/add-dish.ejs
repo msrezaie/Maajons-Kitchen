@@ -1,24 +1,30 @@
 <%- include('includes/head.ejs') %>
 
+<%- include('includes/menu.ejs') %>
+
 				<!-- Wrapper -->
 					<section id="wrapper">
 						<!-- Content -->
 							<div class="wrapper">
 								<div class="inner">
 									<h2 class="major">Add dish</h2>
-									<form method="POST" action="#">
+									<form action="/admin/add-dish" method="POST" enctype="">
 										<div class="fields">
 											<div class="field">
 												<label for="name">Name</label>
 												<input type="text" name="name" id="name" />
 											</div>
 											<div class="field">
-												<label for="email">Email</label>
-												<input type="email" name="email" id="email" />
+												<label for="imageUrl">Image</label>
+												<input type="text" name="imageUrl" id="imageUrl" />
 											</div>
 											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="4"></textarea>
+												<label for="price">Price</label>
+												<input type="text" name="price" id="price" />
+											</div>
+											<div class="field">
+												<label for="shortDesc">Short Description</label>
+												<input type="text" name="shortDesc" id="shortDesc" />
 											</div>
 										</div>
 										<ul class="actions">
