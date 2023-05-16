@@ -2,12 +2,16 @@ const express = require("express");
 
 const router = express.Router();
 
-const mainController = require("../controllers/main-controller");
+const {
+  getHome,
+  getAboutUs,
+  getAboutDish,
+} = require("../controllers/main-controller");
 
-router.get("/", mainController.getHome);
+router.get("/", getHome);
 
-router.get("/about-us", mainController.getAboutUs);
+router.get("/about-us", getAboutUs);
 
-router.get("/about-dish", mainController.getAboutDish);
+router.get("/about-dish/:dishName", getAboutDish);
 
 module.exports = router;

@@ -1,15 +1,24 @@
 const Dish = require("../models/dish");
 
-exports.getAddDish = (req, res, next) => {
-  res.render("add-dish", { path: "add-dish" });
+const getAdmin = (req, res, next) => {
+  Dish.fetchAll()
+    .then((dishes) => {
+      res.render("admin", {
+        path: "/admin",
+        dishes: dishes,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
-exports.postAddDish = (req, res, next) => {
+const postAdmin = (req, res, next) => {
   const name = req.body.name;
-  const image = req.body.imageUrl;
+  const image = req.file;
   const price = req.body.price;
   const shortDesc = req.body.shortDesc;
-  const dish = new Dish(name, image, price, shortDesc);
+  const dish = new Dish(name, image.path, price, shortDesc);
   dish
     .save()
     .then(() => {
@@ -18,5 +27,7 @@ exports.postAddDish = (req, res, next) => {
     .catch((err) => {
       console.log(err);
     });
-  res.redirect("/");
+  res.redirect("/admin");
 };
+
+module.exports = { getAdmin, postAdmin };

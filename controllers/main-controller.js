@@ -1,11 +1,34 @@
-exports.getHome = (req, res, next) => {
-  res.render("index", { path: "/" });
+const Dish = require("../models/dish");
+
+const getHome = (req, res, next) => {
+  Dish.fetchAll()
+    .then((dishes) => {
+      res.render("index", {
+        path: "/",
+        dishes: dishes,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
-exports.getAboutUs = (req, res, next) => {
+const getAboutUs = (req, res, next) => {
   res.render("about-us", { path: "about-us" });
 };
 
-exports.getAboutDish = (req, res, next) => {
-  res.render("about-dish", { path: "about-dish" });
+const getAboutDish = (req, res, next) => {
+  const dishName = req.params.dishName;
+  Dish.fetchByName(dishName)
+    .then((dish) => {
+      res.render("about-dish", {
+        path: "about-dish/" + dishName,
+        dish: dish,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
+
+module.exports = { getHome, getAboutUs, getAboutDish };

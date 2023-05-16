@@ -2,10 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-const adminController = require("../controllers/admin-controller");
+const { getAdmin, postAdmin } = require("../controllers/admin-controller");
 
-router.get("/add-dish", adminController.getAddDish);
+router.get("/admin", getAdmin);
 
-router.post("/add-dish", adminController.postAddDish);
+router.post("/admin", postAdmin);
 
 module.exports = router;
