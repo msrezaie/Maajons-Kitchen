@@ -23,8 +23,10 @@
 										<% if (dishes.length > 0) { %>
 											<% for (let dish of dishes) { %>
 												<article>
-													<div class="image"><img src="/<%= dish.imageUrl %>" alt="<%= dish.imageUrl %>" /></div>
-													<h3 class="major"><%= dish.name.split('-').join(' ') %><span class="price"><%= dish.price %></span></h3>
+													<div class="image"><img src="/<%= dish.mainImageUrl %>" alt="<%= dish.name %>.png" /></div>
+													<div class="space-between-container">
+														<h3 class=""><%= dish.name.split('-').join(' ') %></h3><h3 class="fName"><%= dish.fName %></h3><h3 class="price"><%= dish.price %></h3>
+													</div>
 													<p><%= dish.shortDesc %></p>
 													<a href="/about-dish/<%= dish.name %>" class="special">About Dish</a>
 												</article>
@@ -36,16 +38,29 @@
 
 					</section>
 
+					<section id="wrapper">
+
+						<section id="four" class="wrapper alt style1">
+							<div class="inner">
+								<div class="space-between-container">
+									<h2 class="">Place order</h2><h2>سفارش</h2>
+								</div>
+								<p>To place your order, you can message us using the following numbers. Kindly note that orders must be made in advance and a delivery fee of $6 is added per order.</p>
+								<div class="rtl-container">
+									<p>برای سفارش غذا، می‌توانید از طریق شماره‌های زیر به ما پیام دهید. لطفاً توجه کنید که سفارشات باید از قبل صورت گیرد و 6 دلار به هر سفارش برای رساندن غذا به درب منزل شما افزوده می‌شود.</p>
+								</div>
+								<div class="contact">
+									<div class="icon solid fa-phone">(000) 000-0000</div>
+								</div>
+							</div>
+						</section>
+
+					</section>
+					
+
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Place order</h2>
-							<p>To place your order, please give us a call. Kindly note that orders must be made at least 1 day in advance and a delivery fee of $3 will be added to your order.</p>
-							<ul class="contact">
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>

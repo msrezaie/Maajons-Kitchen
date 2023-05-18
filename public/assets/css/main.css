@@ -1,5 +1,11 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Karla:wght@500;600;700;800&family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Noot';
+  src: url('../webfonts/Noot.otf') format('truetype');
+}
 
 /*
 	Solid State by HTML5 UP
@@ -18,6 +24,25 @@
 	font-weight: 700;
 	text-transform: lowercase;
 }
+
+.space-between-container {
+	display: flex;
+  	justify-content: space-between;
+	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+}
+
+.rtl-container {
+  direction: rtl;
+}
+
+.features article p{
+	padding-top: 0.5em;
+}
+
+.inner .contact {
+	text-align: center;
+}
+/* my styling */
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -2463,6 +2488,8 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
+				max-height: 200px;
+				object-fit: cover;
 			}
 
 		.image.main {
