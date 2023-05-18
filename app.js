@@ -21,7 +21,10 @@ const fileStorage = multer.diskStorage({
     callback(null, "images");
   },
   filename: (req, file, callback) => {
-    callback(null, file.originalname);
+    callback(
+      null,
+      new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
+    );
   },
 });
 
@@ -33,9 +36,19 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(multer({ storage: fileStorage }).single("image"));
+app.use(
+  multer({ storage: fileStorage }).fields([
+    { name: "mainImage", maxCount: 1 },
+    { name: "pic1", maxCount: 1 },
+    { name: "pic2", maxCount: 1 },
+    { name: "pic3", maxCount: 1 },
+    { name: "pic4", maxCount: 1 },
+    { name: "pic5", maxCount: 1 },
+  ])
+);
 
 app.use(mainRoutes);
+
 app.use(adminRoutes);
 
 app.use(get404);

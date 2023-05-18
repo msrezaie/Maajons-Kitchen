@@ -21,10 +21,14 @@ const getAboutDish = (req, res, next) => {
   const dishName = req.params.dishName;
   Dish.fetchByName(dishName)
     .then((dish) => {
-      res.render("about-dish", {
-        path: "about-dish/" + dishName,
-        dish: dish,
-      });
+      if (dish) {
+        res.render("about-dish", {
+          path: "about-dish/" + dishName,
+          dish: dish,
+        });
+      } else {
+        next();
+      }
     })
     .catch((err) => {
       console.log(err);

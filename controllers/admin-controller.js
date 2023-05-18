@@ -15,10 +15,31 @@ const getAdmin = (req, res, next) => {
 
 const postAdmin = (req, res, next) => {
   const name = req.body.name;
-  const image = req.file;
+  const fName = req.body.fName;
+  const mainImage = req.files["mainImage"]?.[0].path ?? null;
   const price = req.body.price;
   const shortDesc = req.body.shortDesc;
-  const dish = new Dish(name, image.path, price, shortDesc);
+  const pic1Image = req.files["pic1"]?.[0].path ?? null;
+  const pic2Image = req.files["pic2"]?.[0].path ?? null;
+  const pic3Image = req.files["pic3"]?.[0].path ?? null;
+  const pic4Image = req.files["pic4"]?.[0].path ?? null;
+  const pic5Image = req.files["pic5"]?.[0].path ?? null;
+  const howMade = req.body.howMade;
+  const howServe = req.body.howServe;
+  const dish = new Dish(
+    name,
+    fName,
+    mainImage,
+    price,
+    shortDesc,
+    pic1Image,
+    pic2Image,
+    pic3Image,
+    pic4Image,
+    pic5Image,
+    howMade,
+    howServe
+  );
   dish
     .save()
     .then(() => {
