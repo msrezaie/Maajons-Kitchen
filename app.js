@@ -1,5 +1,7 @@
 const path = require("path");
 
+require("dotenv").config();
+
 const express = require("express");
 
 const bodyParser = require("body-parser");
@@ -53,7 +55,7 @@ app.use(adminRoutes);
 
 app.use(get404);
 
-const PORT = 7000;
+const PORT = process.env.PORT || 4000;
 
 mongoConnect(() => {
   app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
