@@ -1,6 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Karla:wght@500;600;700;800&family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Kanit:wght@100;300;400;700&family=Karla:wght@500;600;700;800&family=Merienda:wght@600;800;900&family=Palanquin+Dark:wght@400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Noot';
@@ -18,11 +18,16 @@
     text-align: center;
 }
 
-.features article h3.major .price {
-    float: right;
-	font-size: 1.2rem;
-	font-weight: 700;
-	text-transform: lowercase;
+.price {
+	font-family: Kanit;
+}
+
+.fName {
+	font-size: 1em;
+}
+
+article p {
+	font-weight: 100;
 }
 
 .space-between-container {
@@ -41,6 +46,16 @@
 
 .inner .contact {
 	text-align: center;
+}
+
+.order-placement h2.major span {
+	font-size: 1.2em;
+	font-weight: 600;
+	display: block;
+}
+
+.contact ul{
+	list-style: none;
 }
 /* my styling */
 
@@ -161,7 +176,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: Kanit, sans-serif;
 		font-size: 16.5pt;
 		font-weight: 300;
 		line-height: 1.65;
@@ -226,7 +241,7 @@ input, select, textarea {
 			text-decoration: none;
 			border-bottom: 0;
 			display: block;
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: Kanit, sans-serif;
 			font-size: 0.8em;
 			font-weight: 700;
 			letter-spacing: 0.1em;
@@ -289,7 +304,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
-		font-family: Raleway, Helvetica, sans-serif;
+		font-family: Kanit, sans-serif;
 		font-weight: 700;
 		letter-spacing: 0.1em;
 		margin: 0 0 1em 0;
@@ -3143,7 +3158,7 @@ input, select, textarea {
 			}
 
 		#header nav {
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: Kanit, sans-serif;
 			font-size: 0.8em;
 			font-weight: 700;
 			height: 3em;
@@ -3295,7 +3310,7 @@ input, select, textarea {
 		-ms-user-select: none;
 		user-select: none;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		background: rgba(46, 49, 65, 0.8);
+		background: rgba(43, 47, 56, 0.8);
 		cursor: default;
 		height: 100%;
 		left: 0;
@@ -3318,7 +3333,7 @@ input, select, textarea {
 			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
 			transition: opacity 0.35s ease, transform 0.35s ease;
 			-webkit-overflow-scrolling: touch;
-			background: #4c5c96;
+			background: #50535e;
 			border-radius: 5px;
 			display: block;
 			max-width: 100%;
@@ -3364,9 +3379,9 @@ input, select, textarea {
 					border-radius: 5px;
 					border: 0;
 					display: block;
-					font-family: Raleway, Helvetica, sans-serif;
+					font-family: Kanit, sans-serif;
 					font-size: 0.8em;
-					font-weight: 200;
+					font-weight: 300;
 					letter-spacing: 0.1em;
 					line-height: 1.85em;
 					padding: 0.75em 0;
@@ -3374,7 +3389,8 @@ input, select, textarea {
 				}
 
 					#menu .links li a:hover {
-						background: #45558d;
+						transition: ease 0.1s;
+						background: #3b3d49;
 					}
 
 		@media screen and (max-width: 736px) {
@@ -3419,6 +3435,7 @@ input, select, textarea {
 	}
 
 		#banner .inner {
+			text-align: center;
 			margin: 0 auto;
 			width: 50em;
 		}
@@ -3477,9 +3494,8 @@ input, select, textarea {
 			-ms-filter: blur(0);
 			filter: blur(0);
 			opacity: 1;
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: Kanit, sans-serif;
 			font-size: 1em;
-			font-weight: 200;
 			letter-spacing: 0.1em;
 			line-height: 2;
 			text-transform: uppercase;
@@ -3573,19 +3589,20 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper > header {
-		padding: 11em 0 2.25em 0 ;
+		padding: 7em 0 0 0 ;
 	}
 
 		#wrapper > header .inner {
+			text-align: center;
 			margin: 0 auto;
-			width: 55em;
+			width: 30em;
 		}
 
 		#wrapper > header h2 {
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-			font-size: 2em;
+			font-size: 1.5em;
 			margin-bottom: 0.8em;
-			padding-bottom: 0.4em;
+			/* padding-bottom: 0.4em; */
 		}
 
 		#wrapper > header p {
@@ -3650,15 +3667,15 @@ input, select, textarea {
 
 	.wrapper {
 		background-color: #2e3141;
-		margin: 6.5em 0;
+		margin: 6.5em 0 0 0;
 		position: relative;
 	}
 
 
 		.wrapper .inner {
-			padding: 3em 0 1em 0 ;
+			padding: 2em 0 2em 0 ;
 			margin: 0 auto;
-			width: 55em;
+			width: 60em;
 		}
 
 		.wrapper.style2 {
@@ -4016,8 +4033,8 @@ input, select, textarea {
 		#footer .inner .copyright {
 			border-top: solid 2px rgba(255, 255, 255, 0.125);
 			list-style: none;
-			margin: 4em 0 2em 0;
-			padding: 2em 0 0 0;
+			margin: 2em 0 1em 0;
+			padding: 1em 0 0 0;
 			width: 100%;
 		}
 
@@ -4061,11 +4078,11 @@ input, select, textarea {
 
 		#footer {
 			margin-top: -4.75em;
-			padding-top: 4.75em;
+			padding-top: 0.75em;
 		}
 
 			#footer .inner {
-				padding: 3em 3em 1em 3em ;
+				padding: 1em 3em 1em 3em ;
 				display: block;
 				width: 100%;
 			}
@@ -4081,7 +4098,7 @@ input, select, textarea {
 				}
 
 				#footer .inner .copyright {
-					margin: 4em 0 2em 0;
+					margin: 2em 0 1em 0;
 				}
 
 	}
@@ -4090,11 +4107,11 @@ input, select, textarea {
 
 		#footer {
 			margin-top: -2.5em;
-			padding-top: 2.5em;
+			padding-top: 0;
 		}
 
 			#footer .inner {
-				padding: 2em 2em 0.1em 2em ;
+				padding: 0.1em 2em 0.1em 2em ;
 			}
 
 				#footer .inner form {
@@ -4111,9 +4128,9 @@ input, select, textarea {
 
 		#footer .inner .copyright li {
 			border-left: 0;
-			display: block;
+			/* display: block; */
 			margin: 1em 0 0 0;
-			padding-left: 0;
+			padding-left: 1em;
 		}
 
 			#footer .inner .copyright li:first-child {
