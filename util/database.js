@@ -1,6 +1,5 @@
 // getting a mongodb client to connect to a mongodb database
 const MongoClient = require("mongodb").MongoClient;
-require("dotenv").config();
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jqipsao.mongodb.net/?retryWrites=true&w=majority`;
 
