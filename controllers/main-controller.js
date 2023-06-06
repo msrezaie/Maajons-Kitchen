@@ -1,7 +1,7 @@
 const Dish = require("../models/dish");
 
 const getHome = (req, res, next) => {
-  Dish.fetchAll()
+  Dish.find()
     .then((dishes) => {
       res.render("index", {
         path: "/",
@@ -18,12 +18,12 @@ const getAboutUs = (req, res, next) => {
 };
 
 const getAboutDish = (req, res, next) => {
-  const dishName = req.params.dishName;
-  Dish.fetchByName(dishName)
+  const dishId = req.params.dishId;
+  Dish.findById(dishId)
     .then((dish) => {
       if (dish) {
         res.render("about-dish", {
-          path: "about-dish/" + dishName,
+          path: "about-dish/" + dishId,
           dish: dish,
         });
       } else {

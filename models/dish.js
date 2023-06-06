@@ -1,75 +1,56 @@
-const getDb = require("../util/database").getDb;
-class Dish {
-  constructor(
-    name,
-    fName,
-    mainImageUrl,
-    price,
-    shortDesc,
-    pic1ImageUrl,
-    pic2ImageUrl,
-    pic3ImageUrl,
-    pic4ImageUrl,
-    pic5ImageUrl,
-    howMade,
-    howServe
-  ) {
-    this.name = name;
-    this.fName = fName;
-    this.mainImageUrl = mainImageUrl;
-    this.price = price;
-    this.shortDesc = shortDesc;
-    this.pic1ImageUrl = pic1ImageUrl;
-    this.pic2ImageUrl = pic2ImageUrl;
-    this.pic3ImageUrl = pic3ImageUrl;
-    this.pic4ImageUrl = pic4ImageUrl;
-    this.pic5ImageUrl = pic5ImageUrl;
-    this.howMade = howMade;
-    this.howServe = howServe;
-  }
+const mongoose = require("mongoose");
 
-  save() {
-    const db = getDb();
-    return db
-      .collection("dishes")
-      .insertOne(this)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+const Schema = mongoose.Schema;
 
-  static fetchAll() {
-    const db = getDb();
-    return db
-      .collection("dishes")
-      .find()
-      .toArray()
-      .then((dishes) => {
-        return dishes;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+const dishSchema = Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  fName: {
+    type: String,
+    required: true,
+  },
+  mainImageUrl: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+  shortDesc: {
+    type: String,
+    required: true,
+  },
+  pic1ImageUrl: {
+    type: String,
+    required: true,
+  },
+  pic2ImageUrl: {
+    type: String,
+    required: true,
+  },
+  pic3ImageUrl: {
+    type: String,
+    required: true,
+  },
+  pic4ImageUrl: {
+    type: String,
+    required: true,
+  },
+  pic5ImageUrl: {
+    type: String,
+    required: true,
+  },
+  howMade: {
+    type: String,
+    required: true,
+  },
+  howServe: {
+    type: String,
+    required: true,
+  },
+});
 
-  static fetchByName(dishName) {
-    const db = getDb();
-    return (
-      db
-        .collection("dishes")
-        // find returns a cursor, and the object passed to it is for filtering
-        .find({ name: dishName })
-        .next()
-        .then((dishes) => {
-          return dishes;
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-    );
-  }
-}
-module.exports = Dish;
+module.exports = mongoose.model("Dish", dishSchema);

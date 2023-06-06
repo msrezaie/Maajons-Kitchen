@@ -14,7 +14,7 @@ const mainRoutes = require("./routes/main");
 
 const adminRoutes = require("./routes/admin");
 
-const mongoConnect = require("./util/database").mongoConnect;
+const mongoose = require("mongoose");
 
 const { get404 } = require("./controllers/error");
 
@@ -57,6 +57,13 @@ app.use(get404);
 
 const PORT = process.env.PORT || 4000;
 
-mongoConnect(() => {
-  app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
-});
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jqipsao.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  )
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
+  })
+  .catch((err) => {
+    console.log(err);
+  });

@@ -1,7 +1,7 @@
 const Dish = require("../models/dish");
 
 const getAdmin = (req, res, next) => {
-  Dish.fetchAll()
+  Dish.find()
     .then((dishes) => {
       res.render("admin", {
         path: "/admin",
@@ -26,20 +26,20 @@ const postAdmin = (req, res, next) => {
   const pic5Image = req.files["pic5"]?.[0].path ?? null;
   const howMade = req.body.howMade;
   const howServe = req.body.howServe;
-  const dish = new Dish(
-    name,
-    fName,
-    mainImage,
-    price,
-    shortDesc,
-    pic1Image,
-    pic2Image,
-    pic3Image,
-    pic4Image,
-    pic5Image,
-    howMade,
-    howServe
-  );
+  const dish = new Dish({
+    name: name,
+    fName: fName,
+    mainImage: mainImage,
+    price: price,
+    shortDesc: shortDesc,
+    pic1Image: pic1Image,
+    pic2Image: pic2Image,
+    pic3Image: pic3Image,
+    pic4Image: pic4Image,
+    pic5Image: pic5Image,
+    howMade: howMade,
+    howServe: howServe,
+  });
   dish
     .save()
     .then(() => {

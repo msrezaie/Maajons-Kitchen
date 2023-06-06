@@ -12,6 +12,6 @@ router.get("/", getHome);
 
 router.get("/about-us", getAboutUs);
 
-router.get("/about-dish/:dishName", getAboutDish);
+router.get("/about-dish/:dishId", getAboutDish);
 
 module.exports = router;
