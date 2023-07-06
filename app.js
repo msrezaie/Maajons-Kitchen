@@ -1,22 +1,15 @@
 const path = require("path");
-
-require("dotenv").config();
-
 const express = require("express");
-
 const bodyParser = require("body-parser");
-
 const multer = require("multer");
-
 const app = express();
 
 const mainRoutes = require("./routes/main");
-
 const adminRoutes = require("./routes/admin");
-
 const mongoose = require("mongoose");
-
 const { get404 } = require("./controllers/error");
+
+require("dotenv").config();
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -58,9 +51,7 @@ app.use(get404);
 const PORT = process.env.PORT || 4000;
 
 mongoose
-  .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jqipsao.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-  )
+  .connect(process.env.URI)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
   })
