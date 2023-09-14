@@ -2,12 +2,6 @@
 
 This full-stack Node.js application provides users with a delightful browsing experience, allowing them to explore the diverse menu of delicious Afghan cuisines offered by Maajon's Kitchen
 
-## Access
-
-The web app can be accessed with the following link:
-
-https://maajonskitchen.up.railway.app/
-
 ## Features
 
 Browse the Menu: Users can explore a wide variety of authentic Afghan dishes, each carefully prepared with love and expertise.
